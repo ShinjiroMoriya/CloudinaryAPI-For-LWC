@@ -13,6 +13,9 @@
   "env": {
     "SALESFORCE_URL": {
       "required": true
+    },
+    "DOCS_FLAG": {
+      "required": false
     }
   }
 }

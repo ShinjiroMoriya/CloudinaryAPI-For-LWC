@@ -12,7 +12,20 @@ from dotenv import load_dotenv
 dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
-app = FastAPI()
+DOCS_FLAG = os.environ.get('DOCS_FLAG') == 'True'
+
+config = {
+    'title': "CloudinayAPI for LWC",
+    'redoc_url': '/'
+}
+
+if DOCS_FLAG is False:
+    config.update({
+        'docs_url': None,
+        'redoc_url': None,
+    })
+
+app = FastAPI(**config)
 
 origins = [os.environ.get('SALESFORCE_URL', '*')]
 
