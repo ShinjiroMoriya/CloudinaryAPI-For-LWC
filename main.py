@@ -4,7 +4,7 @@ from os.path import join, dirname
 from cloudinary import uploader
 from cloudinary.api import delete_resources
 from urllib.parse import urlparse
-from fastapi import FastAPI, File, UploadFile
+from fastapi import FastAPI, File, UploadFile, Form
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from dotenv import load_dotenv
@@ -46,6 +46,6 @@ def read_upload(upload_file: UploadFile = File(...)):
 
 
 @app.post('/api/delete')
-def read_delete(image: Image):
-    res = delete_resources(public_ids=[image.public_id])
+def read_delete(public_id: str = Form(...)):
+    res = delete_resources(public_ids=[public_id])
     return res
