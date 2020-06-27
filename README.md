@@ -13,4 +13,6 @@ Application that can use Cloudinary API from LWC
 - FastAPI v0.58.0
 
 ## Heroku Config Vars
-- SALESFORCE_URL: required
+- SALESFORCE_URL: required -> string
+- DOCS_FLAG: optional -> bool True/False
+
