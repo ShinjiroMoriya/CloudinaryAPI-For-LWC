@@ -13,4 +13,4 @@ Application that can use Cloudinary API from LWC
 - FastAPI v0.58.0
 
 ## Heroku Config Vars
-- SALESFORCE_URL: "https://example.lightning.force.com"
+- SALESFORCE_URL: required
